@@ -30,10 +30,12 @@ export default {
 
     provide('addFiles', (files) => {
       emit('update:modelValue', [...props.modelValue, ...files])
+      inputRef.value.value = ''
     })
 
     const updateFiles = () => {
       emit('update:modelValue', [...props.modelValue, ...inputRef.value.files])
+      inputRef.value.value = ''
     }
 
     return {
